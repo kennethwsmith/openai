@@ -1,7 +1,7 @@
 import os
 import openai
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key_path = os.path.join(os.path.dirname(__file__), 'openai.key')
 
 while True:
     prompt = input("Prompt: ")
@@ -22,8 +22,9 @@ while True:
             f.write(text)
         print(text)
         print("\n*********************")
-    except:
+    except Exception as inst:
         with open(os.path.join(os.path.dirname(__file__), 'completion.txt'), 'a') as f:
             f.write("\n\n*********\n\n")
             f.write(prompt)
             f.write("Error, no reply")
+        print(inst)    # the exception instance
