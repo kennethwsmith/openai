@@ -3,6 +3,10 @@ openai examples
 
 simple examples for using openai
 
+openai key:
+
+Copy the key to a file called openai.key in the root of this folder.
+
 Usage
 -----
 
